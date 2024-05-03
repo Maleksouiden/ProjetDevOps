@@ -4,7 +4,7 @@ services:
     container_name: mysqldbMalek
     image: "mysql:latest"
     restart: "on-failure"
-     ports:
+    ports:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
