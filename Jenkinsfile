@@ -1,6 +1,11 @@
 pipeline {
      agent any
     stages {
+       stage("Go to Project") {
+            steps {
+                sh "cd gestion-station-ski/"
+            }
+        }
         stage("Build Project") {
             steps {
                 sh "mvn clean package -DskipTests"
@@ -8,7 +13,7 @@ pipeline {
         }
     }
     post {
-        success {
+        /*success {
             emailext body: "The pipeline has completed successfully",
                 attachLog: true,
                 subject: "Jenkins pipeline completed successfully",
@@ -19,10 +24,10 @@ pipeline {
                 attachLog: true,
                 subject: "Jenkins pipeline failed",
                 to: "malek.souiden@esprit.tn"
-        }
-        /*always {
-            cleanWs()
         }*/
+        always {
+            cleanWs()
+        }
     }
     
 }
