@@ -3,7 +3,7 @@ pipeline {
   
       
     }
-     agent any
+     agent agent
     stages {
         stage("Build Project") {
             steps {
