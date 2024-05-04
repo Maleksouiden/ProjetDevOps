@@ -1,9 +1,5 @@
 pipeline {
-     environment {
-  
-      
-    }
-     agent agent
+     agent any
     stages {
         stage("Build Project") {
             steps {
